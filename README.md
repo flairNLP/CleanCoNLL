@@ -30,3 +30,30 @@ Step by step:
   python scripts/create_corpus.py
   ```
   for combining the three sources and creating the three CleanCoNLL files with text. They will be placed inside `/data/CleanCoNLL_corpus`.
+
+  ## Dataset Columns
+  The three files will look like this: Column format with the following columns, the last 3 with BIO tagging scheme:
+  
+  `Token   POS   Wikipedia   NER (CleanCoNLL*)   NER (CleanCoNLL)`
+  
+  (CleanCoNLL* is the CleanCoNLL version before Phase 3, i.e. before reverting the adjectival affiliations back to MISC, see paper for details.)
+  
+  ```
+  -DOCSTART-	-X-	O	O	O
+  
+  SOCCER	NN	O	O	O
+  -	:	O	O	O
+  JAPAN	NNP	B-Japan_national_football_team	B-ORG	B-ORG
+  GET	VB	O	O	O
+  LUCKY	NNP	O	O	O
+  WIN	NNP	O	O	O
+  ,	,	O	O	O
+  CHINA	NNP	B-China_national_football_team	B-ORG	B-ORG
+  IN	IN	O	O	O
+  SURPRISE	DT	O	O	O
+  DEFEAT	NN	O	O	O
+  .	.	O	O	O
+  ```
+
+
+  
