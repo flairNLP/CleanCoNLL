@@ -1,10 +1,12 @@
 import csv, os, json
 
-PATH_REISS = "../data/reiss2020_conll/"
+WD = os.getcwd()
+print(WD)
 
-PATH_ANNOTATIONS = "../data/CleanCoNLL_annotations/"
-PATH_LINEBREAK_CHANGES = "../data/CleanCoNLL_linebreak_changes/"
-PATH_TARGET = "../data/CleanCoNLL_corpus/"
+PATH_REISS = WD + "/data/reiss2020_conll/"
+PATH_ANNOTATIONS = WD + "/data/CleanCoNLL_annotations/"
+PATH_LINEBREAK_CHANGES = WD +"/data/CleanCoNLL_linebreak_changes/"
+PATH_TARGET = WD +"/data/CleanCoNLL_corpus/"
 
 
 def combine_conll_files(path_reiss, path_annotations, path_linebreaks, path_output):
