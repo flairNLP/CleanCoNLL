@@ -1,6 +1,9 @@
 # CleanCoNLL: A Nearly Noise-Free Named Entity Recognition Dataset
 
-We semi-automatically corrected annotation errors in the classic CoNLL-03 dataset for Named Entity Recognition. Get our corpus **CleanCoNLL** with the help of this repository!
+We semi-automatically corrected annotation errors in the classic CoNLL-03 dataset for Named Entity Recognition (NER). Get our corpus **CleanCoNLL** with the help of this repository!
+
+<img src="data/CleanCoNLL_example_sentence.jpg" width="700">
+
 
 ## About CleanCoNLL
 For details on the approach and evaluation, have a look at our EMNLP 2023 paper:
@@ -13,7 +16,7 @@ We keep the original tagging scheme with 4 types (PER, LOC, ORG, MISC). We add t
 
 As source text base, we use the corrected corpus version by Reiss et al. (2020) ([paper](https://aclanthology.org/2020.conll-1.16/), [repo](https://github.com/CODAIT/Identifying-Incorrect-Labels-In-CoNLL-2003)), as they not only already modify some of the label errors, but also correct some problems with token, sentence and mention splitting. 
 
-## How to use the repository
+## How to get CleanCoNLL?
 We distribute our CleanCoNLL annotations in columns format. The tokens are masked (`[TOKEN]`) for licence reasons, but you'll find a simple script that allows you to recreate CleanCoNLL from the Reiss version.
 
 Step by step:
