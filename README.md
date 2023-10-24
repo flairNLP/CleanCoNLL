@@ -1,24 +1,29 @@
-# CoNLL-A
+# CleanCoNLL: A Nearly Noise-Free Named Entity Recognition Dataset
 
-Repository for creating our corrected version of the CoNLL03 dataset.
-We made use of the Wikipedia links from the [AIDA CoNLL Yago dataset](https://www.mpi-inf.mpg.de/departments/databases-and-information-systems/research/ambiverse-nlu/aida/downloads) for (re-)assigning NER labels for each mention.
-For label assignment we applied a hybrid approach with both automatically derived (using Wikidata info) and - in more difficult cases - manual decisions from two annotators.
+We semi-automatically corrected annotation errors in the classic CoNLL-03 dataset for Named Entity Recognition. Get our corpus **CleanCoNLL** with the help of this repository!
 
-We keep the original tagging scheme with 4 types (PER, LOC, ORG, MISC), however modified some usage principles (e. g. assiginig ORG for sports teams identified by country names).
+## About CleanCoNLL
+For details on the approach and evaluation, have a look at our EMNLP 2023 paper:
+[link to paper]
 
-As text base, we use the corrected corpus version by Reiss et al. 2020 ([paper](https://aclanthology.org/2020.conll-1.16/), [repo](https://github.com/CODAIT/Identifying-Incorrect-Labels-In-CoNLL-2003)), who in their work not only modified label errors but also corrected some problems with sentence/span/mention splitting. 
+In short: We leveraged the Wikipedia links from the [AIDA CoNLL Yago dataset](https://www.mpi-inf.mpg.de/departments/databases-and-information-systems/research/ambiverse-nlu/aida/downloads) for assigning NER labels for each mention in a hybrid (automatically as well as manual) relabeling approach. Furthermore, we performed several rounds of cross-checking for correcting remaining errors and resolving inconsistencies.
+Overall, we updated 7\% of labels from the original CoNLL-03.
 
-## Method overview
+We keep the original tagging scheme with 4 types (PER, LOC, ORG, MISC). We add the NEL (Named Entity Linking) annotations, i.e. Wikipedia links to our annotations.
 
-TODO
+As source text base, we use the corrected corpus version by Reiss et al. (2020) ([paper](https://aclanthology.org/2020.conll-1.16/), [repo](https://github.com/CODAIT/Identifying-Incorrect-Labels-In-CoNLL-2003)), as they not only already modify some of the label errors, but also correct some problems with token, sentence and mention splitting. 
 
 ## How to use the repository
+We distribute our CleanCoNLL annotations in columns format. The tokens are masked (`[TOKEN]`) for licence reasons, but you'll find a simple script that allows you to recreate CleanCoNLL from the Reiss version.
 
-We distribute our annotations in CoNLL format where the tokens themselfs are masked (`[TOKEN]`), along with a script to recreate our corpus from the Reiss version.
-So:
+Step by step:
 * Clone this repository.
-* Go to the Reiss repo and follow their instruction for creating their version.
+* Go to the [Reiss repository](https://github.com/CODAIT/Identifying-Incorrect-Labels-In-CoNLL-2003) and follow their instruction for creating their version.
 * Place those 3 files in the `/data/reiss2020_conll` directory, keeping the names as the are (`eng.train`, `eng.testa`, `eng.testb`).
-* Our annotations can be found inside `/data/ruecker2023_annotations`.
-* Executing the script `/scripts/create_corpus.py` (`python create_corpus.py`) will create 3 files (`clean_conll.{train|dev|text`) and place them into `/data/corpus/`.
-
+* Inside `/data/CleanCoNLL_annotations` you can find our masked annotation files (`cleanconll_annotations.dev.train`, `cleanconll_annotations.dev`, `cleanconll_annotations.test`).
+ * The files inside `/data/CleanCoNLL_linebreak_changes` list some lines where the text base from CleanCoNLL differs from the Reiss version. These are necessary when creating our version from theirs. 
+* You simply need to run
+  ```
+  python scripts/create_corpus.py
+  ```
+  for combining the three sources and creating the three CleanCoNLL files with text. They will be placed inside `/data/CleanCoNLL_corpus`.
