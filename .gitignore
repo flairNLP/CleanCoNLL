@@ -1,4 +1,4 @@
 create_patches.sh
-data/conll03/.*
-data/cleanconll/.*
-data/tokens_updated/.*
+data/conll03
+data/cleanconll
+data/tokens_updated
