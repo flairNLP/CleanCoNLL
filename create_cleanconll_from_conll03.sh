@@ -31,8 +31,8 @@ CLEANCONLL_ANNOTATIONS_DIR="data/cleanconll_annotations/"
 CLEANCONLL_DIR="data/cleanconll/"
 mkdir -p "$CLEANCONLL_DIR"
 
-cut -f 2- "$CLEANCONLL_ANNOTATIONS_DIR/cleanconll.train" | paste "$TOKENS_DIR/train_tokens_updated.txt" - | sed 's/^\t$//' > "$CLEANCONLL_DIR/cleanconll.train"
-cut -f 2- "$CLEANCONLL_ANNOTATIONS_DIR/cleanconll.dev" | paste "$TOKENS_DIR/dev_tokens_updated.txt" - | sed 's/^\t$//' > "$CLEANCONLL_DIR/cleanconll.dev"
-cut -f 2- "$CLEANCONLL_ANNOTATIONS_DIR/cleanconll.test" | paste "$TOKENS_DIR/test_tokens_updated.txt" - | sed 's/^\t$//' > "$CLEANCONLL_DIR/cleanconll.test"
+cut -f 2- "$CLEANCONLL_ANNOTATIONS_DIR/cleanconll_annotations.train" | paste "$TOKENS_DIR/train_tokens_updated.txt" - | sed 's/^\t$//' > "$CLEANCONLL_DIR/cleanconll.train"
+cut -f 2- "$CLEANCONLL_ANNOTATIONS_DIR/cleanconll_annotations.dev" | paste "$TOKENS_DIR/dev_tokens_updated.txt" - | sed 's/^\t$//' > "$CLEANCONLL_DIR/cleanconll.dev"
+cut -f 2- "$CLEANCONLL_ANNOTATIONS_DIR/cleanconll_annotations.test" | paste "$TOKENS_DIR/test_tokens_updated.txt" - | sed 's/^\t$//' > "$CLEANCONLL_DIR/cleanconll.test"
 
 echo "Done!"
