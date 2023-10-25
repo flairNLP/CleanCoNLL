@@ -17,19 +17,20 @@ We keep the original tagging scheme with 4 types (PER, LOC, ORG, MISC). We add t
 As source text base, we use the corrected corpus version by Reiss et al. (2020) ([paper](https://aclanthology.org/2020.conll-1.16/), [repo](https://github.com/CODAIT/Identifying-Incorrect-Labels-In-CoNLL-2003)), as they not only already modify some of the label errors, but also correct some problems with token, sentence and mention splitting. 
 
 ## How to get CleanCoNLL?
-We distribute our CleanCoNLL annotations in columns format. The tokens are masked (`[TOKEN]`) for licence reasons, but you'll find a simple script that allows you to recreate CleanCoNLL from the Reiss version.
+We distribute our CleanCoNLL annotations in columns format. The tokens are masked (`[TOKEN]`) for licence reasons, but you'll find a simple shell script that allows you to recreate CleanCoNLL with the help of the original CoNLL-03.
 
 Step by step:
 * Clone this repository.
-* Go to the [Reiss repository](https://github.com/CODAIT/Identifying-Incorrect-Labels-In-CoNLL-2003) and follow their instruction for creating their version.
-* Place those 3 files in the `/data/reiss2020_conll` directory, keeping the names as the are (`eng.train`, `eng.testa`, `eng.testb`).
-* Inside `/data/CleanCoNLL_annotations` you can find our masked annotation files (`cleanconll_annotations.dev.train`, `cleanconll_annotations.dev`, `cleanconll_annotations.test`).
- * The files inside `/data/CleanCoNLL_linebreak_changes` list some lines where the text base from CleanCoNLL differs from the Reiss version. These are necessary when creating our version from theirs. 
+* Inside `/data/cleanconll_annotations` you can find our masked annotation files (`cleanconll_annotations.dev.train`, `cleanconll_annotations.dev`, `cleanconll_annotations.test`).
+* Inside `/data/patch_files` you find pach files that represent the updates in the text base between the original CoNLL-03 and CleanCoNLL. This is needed for merging our annotations to the original corpus!
 * You simply need to run
   ```
-  python scripts/create_corpus.py
+  bash create_cleanconll_from_conll03.sh
   ```
-  for combining the three sources and creating the three CleanCoNLL files with text. They will be placed inside `/data/CleanCoNLL_corpus`.
+  which will:
+  * download the original CoNLL-03 corpus
+  * apply the patch files to the original CoNLL-03 for getting the text base right before merging our annotations
+  * create the three CleanCoNLL files with text and annotations. They will be placed inside `/data/cleanconll`.
 
   ## Dataset Columns
   The three files will look like this: Column format with the following columns, the last 3 with BIO tagging scheme:
