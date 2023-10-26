@@ -31,18 +31,18 @@ Step-by-step guide:
   * apply the patch files to the original CoNLL-03 text for alligning the text base before merging our annotations
   * create the three CleanCoNLL files with text and annotations, they will be placed inside `/data/cleanconll`.
 
-  ## Dataset Columns
-  The three files will look like this: Column format with the following 5 columns, the last 3 with BIO tagging scheme:
-  
-  ```
-  Token     POS     Wikipedia     NER (CleanCoNLL*)     NER (CleanCoNLL)
-  ```
-  
-  CleanCoNLL* is the CleanCoNLL version before Phase 3, i.e. before reverting the adjectival affiliations back to MISC, see paper for details.
-  
-  Sentences are separated by an empty line, articles by the `-DOCSTART-` token.
+## Dataset Columns
+The three files will look like this: Column format with the following 5 columns, the last 3 with BIO tagging scheme:
 
-  So, an excerpt of the dataset looks like this:
+```
+Token     POS     Wikipedia     NER (CleanCoNLL*)     NER (CleanCoNLL)
+```
+
+CleanCoNLL* is the CleanCoNLL version before Phase 3, i.e. before reverting the adjectival affiliations back to MISC, see paper for details.
+
+Sentences are separated by an empty line, articles by the `-DOCSTART-` token.
+
+So, an excerpt of the dataset looks like this:
   ```
   -DOCSTART-	-X-	O	O	O
   
@@ -59,6 +59,23 @@ Step-by-step guide:
   DEFEAT	NN	O	O	O
   .	.	O	O	O
   ```
+
+## Citation
+If you use CleanCoNLL or find our approach useful, please cite our work.
+
+* In the EMNLP 2023 Proceedings (to appear): []
+
+* On arXiv:
+```
+@misc{rücker2023cleanconll,
+      title={CleanCoNLL: A Nearly Noise-Free Named Entity Recognition Dataset}, 
+      author={Susanna Rücker and Alan Akbik},
+      year={2023},
+      eprint={2310.16225},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL}
+}
+```
 
 
   
