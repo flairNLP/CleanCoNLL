@@ -1,7 +1,7 @@
 # CleanCoNLL: A Nearly Noise-Free Named Entity Recognition Dataset
 We semi-automatically corrected annotation errors in the classic CoNLL-03 dataset for Named Entity Recognition (NER). Get our corpus **CleanCoNLL** -- CoNLL-03 with nearly noise-free NER annotations -- with the help of this repository!
 
-For details of the creation and evaluation of the dataset, have a look at our EMNLP 2023 paper: [Rücker and Akbik (2023)](https://arxiv.org/pdf/2310.16225.pdf)!
+For details of the creation and evaluation of the dataset, have a look at our EMNLP 2023 paper: [Rücker and Akbik (2023)](https://aclanthology.org/2023.emnlp-main.533.pdf)!
 
 <img src="data/CleanCoNLL_example_sentence.jpg" width="700">
 
@@ -63,13 +63,28 @@ So, an excerpt of the dataset looks like this:
 ## Citation
 If you use CleanCoNLL or find our approach useful, please cite our work.
 
-* In the EMNLP 2023 Proceedings (to appear): []
+* In the EMNLP 2023 Proceedings:
+```
+@inproceedings{rucker-akbik-2023-cleanconll,
+    title = "{C}lean{C}o{NLL}: A Nearly Noise-Free Named Entity Recognition Dataset",
+    author = {R{\"u}cker, Susanna  and Akbik, Alan},
+    editor = "Bouamor, Houda and Pino, Juan and Bali, Kalika",
+    booktitle = "Proceedings of the 2023 Conference on Empirical Methods in Natural Language Processing",
+    month = dec,
+    year = "2023",
+    address = "Singapore",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2023.emnlp-main.533",
+    doi = "10.18653/v1/2023.emnlp-main.533",
+    pages = "8628--8645",
+}
+```
 
 * On arXiv:
 ```
 @misc{rücker2023cleanconll,
-      title={CleanCoNLL: A Nearly Noise-Free Named Entity Recognition Dataset}, 
-      author={Susanna Rücker and Alan Akbik},
+      title={{C}lean{C}o{NLL}: A Nearly Noise-Free Named Entity Recognition Dataset}, 
+      author={Susanna R{\"u}cker and Alan Akbik},
       year={2023},
       eprint={2310.16225},
       archivePrefix={arXiv},
