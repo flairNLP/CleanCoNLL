@@ -24,7 +24,7 @@ Step-by-step guide:
 * However, you simply need to run our script
   ```
   chmod u+x create_cleanconll_from_conll03.sh
-  SCRIPT_ROOT=. bash create_cleanconll_from_conll03.sh
+  bash create_cleanconll_from_conll03.sh
   ```
   which will:
   * download the original CoNLL-03 corpus
