@@ -1,5 +1,6 @@
 #!/bin/sh
 
+SCRIPT_ROOT=$(pwd)
 URL="https://data.deepai.org/conll2003.zip"
 CONLL03_DIR="$SCRIPT_ROOT/data/conll03/"
 PATCH_DIR="$SCRIPT_ROOT/data/patch_files"
